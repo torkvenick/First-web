@@ -1,113 +1,85 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <title>FORMS</title>
-</head>
-<style media="screen">
-  div {
-    margin-top: 20px;
-  }
-</style>
-<body>
-  <h1>FORMS</h1>
+  <head>
+    <meta charset="utf-8">
+    <title>forms example</title>
+  </head>
+  <style media="screen">
+    form {
+      margin: 20px;
+    }
+  </style>
+  <body>
+    <form class="form__example" action="index.html" method="post">
+      <fieldset>
+        <legend>Uw gegevens:</legend>
+        Name: <input type="text" name="user" placeholder="username" />
+        Password: <input type="password" name="password" placeholder="password" />
+        Comment: <textarea type="textarea" name="text" placeholder="enter">hello everyone</textarea>
+      </fieldset>
+      <fieldset>
+        <legend>Options:</legend>
+        Which color do you prefer?
+        <input type="radio" name="colors" value="red" checked="checked" />red
+        <input type="radio" name="colors" value="green" />green
+        <input type="radio" name="colors" value="blue" />blue
+      </fieldset>
+      <fieldset>
+        <legend>Options:</legend>
+        Which color do you prefer?
+        <input type="checkbox" name="colors" value="red" />red
+        <input type="checkbox" name="colors" value="green" />green
+        <input type="checkbox" name="colors" value="blue" />blue
+      </fieldset>
+      <fieldset>
+        <legend>Multiple choice</legend>
+        Which color do you prefer?
+        <select class="colors" name="color" size="2" multiple="multiple">
+          <option value="red">red</option>
+          <option value="green">green</option>
+          <option value="blue">blue</option>
+          <option value="white">white</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>List choice</legend>
+        Which color do you prefer?
+        <select class="colors" name="color">
+          <option value="red">red</option>
+          <option value="green">green</option>
+          <option value="blue">blue</option>
+          <option value="white">white</option>
+        </select>
+      </fieldset>
 
-  <!--атрибут Action определяет обработчика данных формы для отправки на сервер. Можно использовать .php файл или почту -->
-  <!--значение Post атрибута Method отправляет данные формы на сервер-->
-  <form id="form__1"class="form__1" action="index.html" method="post">
-
-    <!--type определяет input. Может быть текст, пароль, номер телефона и т.д.-->
-
-    Name: <input type="text" name="name" id="name" placeholder="просто текст" />
-    Password: <input type="password" name="password" placeholder="enter pass"/>
-
-    <!--переключатели-->
-
-    <div class="Radio">
-      Category: <input type="radio" name="colors" value="red" checked="checked" />red
-                <input type="radio" name="colors" value="green" />green
-                <input type="radio" name="colors" value="blue" />blue
-    </div>
-    <div class="Radio">
-      Category: <input type="radio" name="colors" value="red" />red
-                <input type="radio" name="colors" value="green" />green
-                <input type="radio" name="colors" value="blue" />blue
-    </div>
-
-    <!--флажки-->
-
-    <div class="flags">
-      <input type="checkbox" name="checkbox" value="red" /> red
-      <input type="checkbox" name="checkbox" value="green" checked="checked" />green
-      <input type="checkbox" name="checkbox" value="blue" />blue
-    </div>
-
-    <div class="text">
-      Name: <input type="text" name="name" id="name" placeholder="просто текст" />
-    </div>
-
-    <div class="password">
-      Password: <input type="password" name="password" placeholder="enter pass"/>
-    </div>
-
-    <!--раскрывающийся список -->
-
-    <div class="openlist__example1">
-      <select class="list" name="names">
-        <option value="Borya">Borya</option>
-        <option value="Nick">Nick</option>
-        <option value="Misha">Misha</option>
-        <option value="Stas">Stas</option>
-      </select>
-    </div>
-    <div class="openlist__example2">
-      <select class="list" name="also__names">
-        <option value="Borya">Borya</option>
-        <option value="Nick">Nick</option>
-        <option value="Misha" selected="selected">Misha</option>
-        <option value="Stas">Stas</option>
-      </select>
-    </div>
-
-    <!--список множественного выбора-->
-
-    <div class="openlist__multiple">
-      <select class="list" name="more__names" size="3" multiple="multiple">
-        <option value="Borya">Borya</option>
-        <option value="Nick">Nick</option>
-        <option value="Misha">Misha</option>
-        <option value="Stas">Stas</option>
-        <option value="Borya">Borya</option>
-        <option value="Nick">Nick</option>
-        <option value="Misha">Misha</option>
-        <option value="Stas">Stas</option>
-      </select>
-    </div>
-
-    <!--Загрузка файлов на сервер-->
-    <div class="upload__file">
-      <input type="file" name="song" />
-      <input type="submit" value="Upload">
-    </div>
-
-    <!--Кнопка подтверждения-->
-    <div class="button">
-      <input type="submit" name="submit" value="Sign up" />
-    </div>
-
-    <!--Графическая кнопка-->
-    <div class="graphic__button">
-      <input type="text" name="email" />
-      <input type="image" name="submit" src="img/img.png" width="245" height="66" />
-    </div>
-
-    <!--Элемент button-->
-
-    <div class="element__button">
-      <button type="button" name="button"></button>
-      <input type="image" name="submit" src="img/img.png" width="245" height="66" />
-    </div>
-
-  </form>
-</body>
+      <fieldset>
+        <legend>Upload file:</legend>
+        <input type="file" name="files" />
+      </fieldset>
+      <fieldset>
+        <legend>Buttons</legend>
+        <input type="submit" name="submit" value="join us" />
+        <input type="button" name="button" value="confirm" />
+        <button> <img src="plus.png" alt="plus" width="10" height="10">Additional</button>
+      </fieldset>
+      <fieldset>
+        <legend>Buttons</legend>
+        <input type="image" name="submit" src="img.png" width="100" height="70" />
+        <input type="button" name="button" value="confirm" />
+      </fieldset>
+      <fieldset>
+        <legend>email and tel:</legend>
+        <input type="tel" name="tel2" value="tel2" />
+        <input type="email" name="mail" value="mail" />
+      </fieldset>
+      <fieldset>
+        <legend>HTML5 tips:</legend>
+        <input type="color" name="color" />
+        <input type="date" name="date" />
+        <input type="number" name="number" value="57" />
+        <input type="time" name="time" />
+        <input type="range" name="range"  />
+      </fieldset>
+    </form>
+  </body>
 </html>
