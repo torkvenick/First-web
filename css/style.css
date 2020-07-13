@@ -47,11 +47,26 @@ header {
     color: #cbcacb;
     letter-spacing: 0,25px;
     line-height: 45px;
+    position: relative;
 }
 .header__phone {
     padding-left: 20px;
     padding-right: 30px;
 }
+.header__phone:before {
+    content: "\f095";
+    font-family: 'icomoon';
+    position: absolute;
+    left: 0;
+    color: #ffc222;
+}
 .header__email {
     padding-left: 24px;
+}
+.header__email:before {
+    content: "\f003";
+    font-family: 'icomoon';
+    position: absolute;
+    left: 0;
+    color: #ffc222;
 }
